@@ -6,7 +6,7 @@ const datos = {
         contraseña: "1234vicky",
         fechaDeNacimiento: "15/09/2005",
         nroDeDocumento : "12345678",
-        fotoDePerfil: "default-img.png"}
+        fotoDePerfil: "images/users/default-image.png"}
    
 
 }
