@@ -6,7 +6,111 @@ const datos = {
         contraseña: "1234vicky",
         fechaDeNacimiento: "15/09/2005",
         nroDeDocumento : "12345678",
-        fotoDePerfil: "images/users/default-image.png"}
+        fotoDePerfil: "images/users/default-image.png"
+    },
+
+    productos: [
+        {
+            imagen:"",
+            nombreDelProducto:"",
+            descripción: "", 
+            comentarios: [{
+                nombreDeUsuario:"",
+                textoDelComentario:"",
+                imagenDePerfil:""
+            }]          
+            
+        },
+        {
+            imagen:"",
+            nombreDelProducto:"",
+            descripción: "",  
+            comentarios: [{
+                nombreDeUsuario:"",
+                textoDelComentario:"",
+                imagenDePerfil:""
+            }]  
+        },
+        {
+            imagen:"",
+            nombreDelProducto:"",
+            descripción: "",  
+            comentarios: [{
+                nombreDeUsuario:"",
+                textoDelComentario:"",
+                imagenDePerfil:""
+            }]  
+        },
+        {
+            imagen:"",
+            nombreDelProducto:"",
+            descripción: "",  
+            comentarios: [{
+                nombreDeUsuario:"",
+                textoDelComentario:"",
+                imagenDePerfil:""
+            }]  
+        },
+        {
+            imagen:"",
+            nombreDelProducto:"",
+            descripción: "",  comentarios: [{
+                nombreDeUsuario:"",
+                textoDelComentario:"",
+                imagenDePerfil:""
+            }]  
+        },
+        {
+            imagen:"",
+            nombreDelProducto:"",
+            descripción: "",  
+            comentarios: [{
+                nombreDeUsuario:"",
+                textoDelComentario:"",
+                imagenDePerfil:""
+            }]  
+        },
+        {
+            imagen:"",
+            nombreDelProducto:"",
+            descripción: "",  
+            comentarios: [{
+                nombreDeUsuario:"",
+                textoDelComentario:"",
+                imagenDePerfil:""
+            }]  
+        },
+        {
+            imagen:"",
+            nombreDelProducto:"",
+            descripción: "",  
+            comentarios: [{
+                nombreDeUsuario:"",
+                textoDelComentario:"",
+                imagenDePerfil:""
+            }]  
+        },
+        {
+            imagen:"",
+            nombreDelProducto:"",
+            descripción: "",  
+            comentarios: [{
+                nombreDeUsuario:"",
+                textoDelComentario:"",
+                imagenDePerfil:""
+            }]  
+        },
+        {
+            imagen:"",
+            nombreDelProducto:"",
+            descripción: "",  
+            comentarios: [{
+                nombreDeUsuario:"",
+                textoDelComentario:"",
+                imagenDePerfil:""
+            }]  
+        }
+    ]
    
 
 }
