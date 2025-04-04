@@ -11,101 +11,111 @@ const datos = {
 
     productos: [
         {
+            id:1,
             imagen:"",
             nombreDelProducto:"",
             descripción: "", 
             comentarios: [{
-                nombreDeUsuario:"",
+                nombreDeUsuario:"LunaPixel_93",
                 textoDelComentario:"",
                 imagenDePerfil:""
             }]          
             
         },
         {
+            id:2,
             imagen:"",
             nombreDelProducto:"",
             descripción: "",  
             comentarios: [{
-                nombreDeUsuario:"",
+                nombreDeUsuario:"NeoZafiroX",
                 textoDelComentario:"",
                 imagenDePerfil:""
             }]  
         },
         {
+            id:3,
             imagen:"",
             nombreDelProducto:"",
             descripción: "",  
             comentarios: [{
-                nombreDeUsuario:"",
+                nombreDeUsuario:"CaféEn8Bits",
                 textoDelComentario:"",
                 imagenDePerfil:""
             }]  
         },
         {
+            id:4,
             imagen:"",
             nombreDelProducto:"",
             descripción: "",  
             comentarios: [{
-                nombreDeUsuario:"",
+                nombreDeUsuario:"SombrasDelSur",
                 textoDelComentario:"",
                 imagenDePerfil:""
             }]  
         },
         {
+            id:5,
             imagen:"",
             nombreDelProducto:"",
             descripción: "",  comentarios: [{
-                nombreDeUsuario:"",
+                nombreDeUsuario:"HeladoCósmico",
                 textoDelComentario:"",
                 imagenDePerfil:""
             }]  
         },
         {
+            id:6,
             imagen:"",
             nombreDelProducto:"",
             descripción: "",  
             comentarios: [{
-                nombreDeUsuario:"",
+                nombreDeUsuario:"VortexNaranja",
                 textoDelComentario:"",
                 imagenDePerfil:""
             }]  
         },
         {
+            id:7,
             imagen:"",
             nombreDelProducto:"",
             descripción: "",  
             comentarios: [{
-                nombreDeUsuario:"",
+                nombreDeUsuario:"RayoInvisible7",
                 textoDelComentario:"",
                 imagenDePerfil:""
             }]  
         },
         {
+            id:8,
             imagen:"",
             nombreDelProducto:"",
             descripción: "",  
             comentarios: [{
-                nombreDeUsuario:"",
+                nombreDeUsuario:"KoalaCibernético",
                 textoDelComentario:"",
                 imagenDePerfil:""
             }]  
         },
         {
+            id:9,
             imagen:"",
             nombreDelProducto:"",
             descripción: "",  
             comentarios: [{
                 nombreDeUsuario:"",
-                textoDelComentario:"",
+                textoDelComentario:"EcoDeNebula",
                 imagenDePerfil:""
             }]  
         },
         {
+            id:10,
             imagen:"",
             nombreDelProducto:"",
             descripción: "",  
             comentarios: [{
-                nombreDeUsuario:"",
+                nombreDeUsuario:"RunitaErrante",
                 textoDelComentario:"",
                 imagenDePerfil:""
             }]  
