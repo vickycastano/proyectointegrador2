@@ -12,112 +12,113 @@ const datos = {
     productos: [
         {
             id:1,
-            imagen:"",
-            nombreDelProducto:"",
-            descripción: "", 
+            imagen:"images/products/baumeymercier.webp",
+            nombreDelProducto:"Baume & Mercier- CATWALK",
+            descripción: "Un reloj con un diseño limpio y minimalista. Su caja cuadrada y su brazalete de acero le otorgan un aspecto moderno y elegante, ideal para quienes buscan un estilo sobrio pero sofisticado.", 
             comentarios: [{
                 nombreDeUsuario:"LunaPixel_93",
-                textoDelComentario:"",
-                imagenDePerfil:""
+                textoDelComentario:"La calidad es excelente por el precio. Se siente resistente y el diseño es muy moderno.",
+                imagenDePerfil:"images/users/default-image.png"
             }]          
             
         },
         {
             id:2,
-            imagen:"",
-            nombreDelProducto:"",
-            descripción: "",  
+            imagen:"images/products/bulgarisolotempo.webp",
+            nombreDelProducto:"Bulgari Solotempo",
+            descripción: "Un reloj moderno y llamativo, con un diseño minimalista pero impactante. Su caja de acero y correa de cuero negro combinan a la perfección con la esfera con números grandes y estilizados. Ideal para quienes buscan lujo con un toque contemporáneo.",  
             comentarios: [{
                 nombreDeUsuario:"NeoZafiroX",
-                textoDelComentario:"",
-                imagenDePerfil:""
+                textoDelComentario:"Es un reloj muy cómodo, ni lo sientes en la muñeca. Ideal para usar todo el día.",
+                imagenDePerfil:"images/users/default-image.png"
             }]  
         },
         {
             id:3,
-            imagen:"",
-            nombreDelProducto:"",
-            descripción: "",  
+            imagen:"images/products/corumromvlvs.webp",
+            nombreDelProducto:"Corum Romvlvs",
+            descripción: "Un reloj de lujo con una estética clásica y sofisticada. Su esfera limpia con números romanos grabados en el bisel y su combinación de acero y oro lo convierten en un accesorio elegante y exclusivo.",  
             comentarios: [{
                 nombreDeUsuario:"CaféEn8Bits",
-                textoDelComentario:"",
-                imagenDePerfil:""
+                textoDelComentario:"Llegó antes de lo esperado y venía muy bien empaquetado. Sin duda volvería a comprar.",
+                imagenDePerfil:"images/users/default-image.png"
             }]  
         },
         {
             id:4,
-            imagen:"",
-            nombreDelProducto:"",
-            descripción: "",  
+            imagen:"images/products/emporloarmani.webp",
+            nombreDelProducto:"Emporio Armani",
+            descripción: "Un reloj de estilo clásico con un aire deportivo gracias a su cronógrafo. Su caja de acero, esfera beige con detalles en negro y su correa de cuero le dan un aspecto sofisticado y masculino. Ideal para quienes buscan elegancia con funcionalidad.",  
             comentarios: [{
                 nombreDeUsuario:"SombrasDelSur",
-                textoDelComentario:"",
-                imagenDePerfil:""
+                textoDelComentario:"Lo compré como regalo y fue un éxito total. Se ve mucho más caro de lo que cuesta.",
+                imagenDePerfil:"images/users/default-image.png"
             }]  
         },
         {
             id:5,
-            imagen:"",
-            nombreDelProducto:"",
-            descripción: "",  comentarios: [{
+            imagen:"images/products/longinesbellarti.webp",
+            nombreDelProducto:"Longines -Belle Arti",
+            descripción: "Inspirado en el Art Deco, este reloj de Longines combina un diseño rectangular con una esfera negra sofisticada. Su brazalete de acero y sus detalles clásicos lo convierten en una excelente opción para quienes buscan distinción.",  
+            comentarios: [{
                 nombreDeUsuario:"HeladoCósmico",
-                textoDelComentario:"",
-                imagenDePerfil:""
+                textoDelComentario:"Me sorprendió lo elegante que se ve este reloj. Es perfecto para usar tanto en ocasiones formales como casuales.",
+                imagenDePerfil:"images/users/default-image.png"
             }]  
         },
         {
             id:6,
-            imagen:"",
-            nombreDelProducto:"",
-            descripción: "",  
+            imagen:"images/products/loginesdolcevita.webp",
+            nombreDelProducto:"Longines DolceVita",
+            descripción: "Un modelo elegante con un diseño rectangular que lo hace destacar. Su caja de acero y su brazalete metálico brindan un look refinado, mientras que su esfera blanca con detalles sencillos refleja sofisticación y lujo. Perfecto para quienes buscan un reloj distinguido y versátil.",  
             comentarios: [{
                 nombreDeUsuario:"VortexNaranja",
-                textoDelComentario:"",
-                imagenDePerfil:""
+                textoDelComentario:"Me encanta cómo combina con todo. Lo uso a diario y sigue como nuevo.",
+                imagenDePerfil:"images/users/default-image.png"
             }]  
         },
         {
             id:7,
-            imagen:"",
-            nombreDelProducto:"",
-            descripción: "",  
+            imagen:"images/products/radodiastrarcremico.webp",
+            nombreDelProducto:"Rado Diastar Cremico",
+            descripción: "Un reloj sofisticado con un diseño minimalista y elegante. Su caja y brazalete en cerámica blanca con detalles dorados le otorgan un look refinado y exclusivo. Ideal para quienes buscan un estilo moderno y lujoso.",  
             comentarios: [{
                 nombreDeUsuario:"RayoInvisible7",
-                textoDelComentario:"",
-                imagenDePerfil:""
+                textoDelComentario:"El diseño es simple pero elegante, justo lo que estaba buscando. Funciona perfecto.",
+                imagenDePerfil:"images/users/default-image.png"
             }]  
         },
         {
             id:8,
-            imagen:"",
-            nombreDelProducto:"",
-            descripción: "",  
+            imagen:"images/products/raymondweildama.webp",
+            nombreDelProducto:"Raymond Weil Dama",
+            descripción: "Un reloj femenino con un diseño clásico y elegante. Su esfera blanca con números romanos y su correa de cuero negro le dan un toque sofisticado y atemporal. Perfecto para quienes buscan un accesorio refinado para cualquier ocasión.",  
             comentarios: [{
                 nombreDeUsuario:"KoalaCibernético",
-                textoDelComentario:"",
-                imagenDePerfil:""
+                textoDelComentario:"Muy buena relación calidad-precio. Se nota que está bien hecho y no es un reloj cualquiera.",
+                imagenDePerfil:"images/users/default-image.png"
             }]  
         },
         {
             id:9,
-            imagen:"",
-            nombreDelProducto:"",
-            descripción: "",  
+            imagen:"images/products/tagheuer.webp",
+            nombreDelProducto:"Tag Heuer- Formula 1",
+            descripción: "Diseñado para los amantes de la velocidad y la adrenalina, este reloj deportivo cuenta con una caja robusta y un bisel giratorio con marcadores de tiempo. Su combinación de colores le da un aspecto dinámico y audaz.",  
             comentarios: [{
-                nombreDeUsuario:"",
-                textoDelComentario:"EcoDeNebula",
-                imagenDePerfil:""
+                nombreDeUsuario:"EcoDeNebula",
+                textoDelComentario:"El color es precioso, aún más bonito que en las fotos. Me lo han elogiado varias veces.",
+                imagenDePerfil:"images/users/default-image.png"
             }]  
         },
         {
             id:10,
-            imagen:"",
-            nombreDelProducto:"",
+            imagen:"images/products/tagheuerprofessional.webp",
+            nombreDelProducto:"Tag Heuer Professional 2000",
             descripción: "",  
             comentarios: [{
                 nombreDeUsuario:"RunitaErrante",
-                textoDelComentario:"",
-                imagenDePerfil:""
+                textoDelComentario:"Un reloj muy versátil y con estilo. Ideal para quienes quieren lucir bien sin gastar demasiado.",
+                imagenDePerfil:"images/users/default-image.png"
             }]  
         }
     ]

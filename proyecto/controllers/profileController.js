@@ -4,7 +4,7 @@ const profile ={
 
     profile: 
     function(req, res) {
-        res.render('profile', {datos: datos.usuario});
+        res.render('profile', {datos: datos});
       }
 }
 
