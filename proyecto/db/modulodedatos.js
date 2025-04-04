@@ -114,7 +114,7 @@ const datos = {
             id:10,
             imagen:"images/products/tagheuerprofessional.webp",
             nombreDelProducto:"Tag Heuer Professional 2000",
-            descripción: "",  
+            descripción: "Un modelo de inspiración náutica con un diseño resistente y funcional. Su caja de acero con detalles dorados y su bisel giratorio lo hacen ideal para quienes buscan un reloj versátil y duradero.",  
             comentarios: [{
                 nombreDeUsuario:"RunitaErrante",
                 textoDelComentario:"Un reloj muy versátil y con estilo. Ideal para quienes quieren lucir bien sin gastar demasiado.",
