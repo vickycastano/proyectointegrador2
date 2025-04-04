@@ -57,7 +57,7 @@ const datos = {
         },
         {
             id:5,
-            imagen:"images/products/longinesbellarti.webp",
+            imagen:"images/products/longinesbellearti.webp",
             nombreDelProducto:"Longines -Belle Arti",
             descripción: "Inspirado en el Art Deco, este reloj de Longines combina un diseño rectangular con una esfera negra sofisticada. Su brazalete de acero y sus detalles clásicos lo convierten en una excelente opción para quienes buscan distinción.",  
             comentarios: [{
@@ -68,7 +68,7 @@ const datos = {
         },
         {
             id:6,
-            imagen:"images/products/loginesdolcevita.webp",
+            imagen:"images/products/longinesdolcevita.webp",
             nombreDelProducto:"Longines DolceVita",
             descripción: "Un modelo elegante con un diseño rectangular que lo hace destacar. Su caja de acero y su brazalete metálico brindan un look refinado, mientras que su esfera blanca con detalles sencillos refleja sofisticación y lujo. Perfecto para quienes buscan un reloj distinguido y versátil.",  
             comentarios: [{
@@ -79,7 +79,7 @@ const datos = {
         },
         {
             id:7,
-            imagen:"images/products/radodiastrarcremico.webp",
+            imagen:"images/products/radodiastarcremico.webp",
             nombreDelProducto:"Rado Diastar Cremico",
             descripción: "Un reloj sofisticado con un diseño minimalista y elegante. Su caja y brazalete en cerámica blanca con detalles dorados le otorgan un look refinado y exclusivo. Ideal para quienes buscan un estilo moderno y lujoso.",  
             comentarios: [{
