@@ -1,7 +1,9 @@
+const datos = require("../db/modulodedatos");
+
 const productController={
     product:
     function(req, res) {
-        res.render('product');
+        res.render('product', {datos: datos});
     }
 }
 
