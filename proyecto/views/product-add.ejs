@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
-
-<head>
-<%- include('./partials/head') %>  
-</head>
-
+<%- include('./partials/head') %>
 <body>
 	<!-- Header -->
-    <%- include('./partials/header') %>
+<%- include('./partials/header') %>
 	<!-- /Header -->
 
 	<!-- Novedades -->
@@ -17,8 +13,10 @@
 			<div class="col-12">
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
+		</div>
+	</div>
 			<!-- Show the "ultimos" products -->
-			<form action="/product-add" method="get"> 
+			<form action="/product" method="get"> 
 				<div>
 					<label for="image"> Imagen del Producto </label>
 					<br>
@@ -37,10 +35,10 @@
 				<br>
 				<button type="submit"> Agregar Producto </button>
 			</form>
-			
+
 
 	<!-- footer -->
-<%- include('./partials/footer') %>  
+<%- include('./partials/footer') %>
 	<!-- /footer -->
 </body>
 

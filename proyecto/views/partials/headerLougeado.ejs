@@ -9,7 +9,7 @@
 				</div>
 	
 				<div class="col-7 col-md-6">
-					<form action="/searchresults" method="GET" class="search-form">
+					<form action="" method="GET" class="search-form">
 						<input type="text" name="search" placeholder="Buscar productos, marcas y más" class="search-form_input">
 						<button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
 					</form>
@@ -30,12 +30,12 @@
 			<nav class="main-navbar">
 				<ul class="left-navbar">
 					<li><a href="/">Todos los productos</a></li>
-					<li><a href="/product-add">Cargar productos</a></li>
+					<li><a href="/productadd">Cargar productos</a></li>
 				</ul>
 	
 				<ul class="right-navbar">
 					<li><a href="/profile">
-							<%= datos.usuario.usuario %> <i class="fas fa-user"></i>
+                        <%= datos.usuario.usuario %> <i class="fas fa-user"></i>
 						</a>
 					</li>
 					<li>
@@ -57,4 +57,3 @@
 		</div>
 	</header>
 	<!-- /Header -->
-	
