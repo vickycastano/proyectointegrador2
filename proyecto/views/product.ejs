@@ -18,54 +18,24 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src=<%= datos.productos[2].imagen %> alt="" class="product-detail-img">
-					<p class="product-detail-description"> <%=datos.productos[2].descripcion%> </p>
+					<img src=<%= datos.productos[0].imagen %> alt="fotodelproducto" class="product-detail-img">
+					<p class="product-detail-description"> <%=datos.productos[0].descripcion%> </p>
 				</article>
+
 				<div class="col-12 col-lg-4">
 					<section class="comments">
+				<% for( let i = 0; i < datos.productos[0].comentarios.length; i++ ) { %>
 						<article>
-							<img src="<%= datos.productos[0].comentarios[0].imagenDePerfil %>" alt="">
+							<img src="<%= datos.productos[0].comentarios[i].imagenDePerfil %>" alt="">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="/profile"> <%= datos.productos[0].comentarios[0].nombreDeUsuario %> </a> </strong>
-								<%= datos.productos[0].comentarios[0].textoDelComentario %> </p>
+								<strong> <a href="/profile"> <%= datos.productos[0].comentarios[i].nombreDeUsuario %> </a> </strong>
+								<%= datos.productos[0].comentarios[i].textoDelComentario %> </p>
 							</div>
 						</article>
-						<article>
-							<img src="<%= datos.productos[1].comentarios[0].imagenDePerfil %>" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/profile">  <%= datos.productos[1].comentarios[0].nombreDeUsuario %> </a> </strong>
-									<%= datos.productos[1].comentarios[0].textoDelComentario %></p>
-							</div>
-						</article>
-						<article>
-							<img src="<%= datos.productos[2].comentarios[0].imagenDePerfil %>" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/profile"> <%= datos.productos[2].comentarios[0].nombreDeUsuario %> </a> </strong>
-									<%= datos.productos[2].comentarios[0].textoDelComentario %>
-									</p>
-							</div>
-						</article>
-						<article>
-							<img src="<%= datos.productos[3].comentarios[0].imagenDePerfil %>" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/profile"> <%= datos.productos[3].comentarios[0].nombreDeUsuario %> </a> </strong>
-									<%= datos.productos[3].comentarios[0].textoDelComentario %></p>
-							</div>
-						</article>
-						<article>
-							<img src="<%= datos.productos[4].comentarios[0].imagenDePerfil %>" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/profile"> <%= datos.productos[4].comentarios[0].nombreDeUsuario %> </a> </strong>
-									<%= datos.productos[4].comentarios[0].textoDelComentario %> </p>
-							</div>
-						</article>
-
+				<% } %>
 					</section>
+
 					<form class="form" action="/" method="get">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
