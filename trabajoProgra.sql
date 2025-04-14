@@ -48,12 +48,7 @@ VALUES
 (DEFAULT, "neozafirox@example.com", "5ZaLjZ7aes", "2003-06-18",17402384, "images/users/user2.jpg"),
 (DEFAULT, "caféen8bits@example.com", "JOEqZQQMMM", "1985-10-17", 90405264, "images/users/user3.jpg"), 
 (DEFAULT, "sombrasdelsur@example.com", "9tAM5q8265", "1985-07-01", 12824561, "images/users/user4.jpg"),
-(DEFAULT, "heladocósmico@example.com", "hJKg4LAmYe", "2000-06-24", 65791676, "images/users/user5.jpeg"),
-(DEFAULT, "vortexnaranja@example.com", "hdej49VDfH","2001-11-19", 79372520, "images/users/user6.jpeg"),
-(DEFAULT, "rayoinvisible7@example.com", "8SEvz2NOI8", "1992-08-13", 34827061, "images/users/user7.jpg"), 
-(DEFAULT, "koalacibernético@example.com", "RTC7CyI88t", "1995-10-17", 93035264, "images/users/user8.jpg"),
-(DEFAULT, "ecodenebula@example.com", "DNoUWamHRZ", "1989-01-14", 76562344, "images/users/user9.jpeg"),
-(DEFAULT, "runitaerrante@example.com", "1qQCmJKOtg", "1989-06-20", 40451074, "images/users/usuuer10.webp");
+(DEFAULT, "heladocósmico@example.com", "hJKg4LAmYe", "2000-06-24", 65791676, "images/users/user5.jpeg");
 
 DELETE FROM usuarios WHERE id = 2;
 
@@ -80,12 +75,32 @@ SELECT * FROM COMENTARIOS;
 INSERT INTO comentarios (id, idPost, idUsuario)
 VALUES
 (DEFAULT, 1, 3),
-(DEFAULT, 3, 4), 
-(DEFAULT, 4, 5), 
+(DEFAULT, 1, 4), 
+(DEFAULT, 1, 5), 
+(DEFAULT, 3, 6),
+(DEFAULT, 3, 7), 
+(DEFAULT, 3, 1), 
+(DEFAULT, 4, 3),
+(DEFAULT, 4, 4),
+(DEFAULT, 4, 5),
 (DEFAULT, 5, 6),
-(DEFAULT, 6, 7), 
-(DEFAULT, 7, 8), 
-(DEFAULT, 8, 9),
-(DEFAULT, 9, 10),
-(DEFAULT, 10, 11),
-(DEFAULT, 11, 12);
+(DEFAULT, 5, 7),
+(DEFAULT, 5, 1), 
+(DEFAULT, 6, 3), 
+(DEFAULT, 6, 4),
+(DEFAULT, 6, 5),
+(DEFAULT, 7, 6),
+(DEFAULT, 7, 7), 
+(DEFAULT, 7, 6),
+(DEFAULT, 8, 7), 
+(DEFAULT, 8, 1), 
+(DEFAULT, 8, 3),
+(DEFAULT, 9, 4),
+(DEFAULT, 9, 5),
+(DEFAULT, 9, 6),
+(DEFAULT, 10, 6),
+(DEFAULT, 10, 7), 
+(DEFAULT, 10, 1), 
+(DEFAULT, 11, 3),
+(DEFAULT, 11, 4),
+(DEFAULT, 11, 5);
