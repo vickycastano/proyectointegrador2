@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes){
     let alias = "Usuario"
     let cols={
 
-         id: {
+        id: {
             autoIncrement: true,
             primaryKey: true, 
             type: DataTypes.INTEGER.UNSIGNED
@@ -13,7 +13,7 @@ module.exports = function(sequelize, DataTypes){
             allowNull: false,
         },
         contraseña:{
-            type: DataTypes.STRING(50),
+            type: DataTypes.STRING(100),
             allowNull: false,
         },
         fechaDeNacimiento:{
@@ -38,11 +38,12 @@ module.exports = function(sequelize, DataTypes){
 
 let config ={
     tableName: "usuarios",
-    timestamps: false,
-    underscored: true,
+    timestamps: true,
+    underscored: false,
 }
 
 
 let Usuario = sequelize.define(alias,cols,config);
-return Usuario 
-}
+return Usuario; 
+
+};

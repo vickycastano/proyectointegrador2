@@ -15,7 +15,7 @@
 				<h2 class="products-title">Registrate</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form action="/profile" method="get">
+			<form action="/register" method="POST">
 				<div>
 					<label class="formli" for="email">Email:</label>
 					<br>
@@ -24,27 +24,27 @@
 				<div>
 					<label class="formli" for="usuario">Usuario:</label>
 					<br>
-					<input class="formli" type="text" name="usuario">
+					<input class="formli" type="text" name="username">
 				</div>
 				<div>
 					<label class="formli" for="contrasena">Contraseña:</label>
 					<br>
-					<input  class="formli" type="password" name="contrasena">
+					<input  class="formli" type="password" name="password">
 				</div>
 				<div>
 					<label class="formli" for="fechadenacimiento">Fecha de nacimiento:</label>
 					<br>
-					<input class="formli" type="date" name="fechadenacimiento">
+					<input class="formli" type="date" name="fechaDeNacimiento">
 				</div>
 				<div>
 					<label class="formli" for="numerodedocumento">Numero de documento:</label>
 					<br>
-					<input type="number" name="numerodedocumento">
+					<input type="number" name="dni">
 				</div>
 				<div>
 					<label class="formli" for="fotodeperfil">Foto de perfil:</label>
 					<br>
-					<input type="text" name="fotodeperfil">
+					<input type="text" name="fotoDePerfil">
 				</div>
 				<br>
 				<button class="formboton" type="submit"> Registrarse </button>
