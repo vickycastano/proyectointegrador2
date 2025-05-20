@@ -1,49 +1,56 @@
 module.exports = function(sequelize, DataTypes){
 
-    let alias = "Usuario"
-    let cols={
-
+    let alias = "Usuario";
+    let cols = {
         id: {
             autoIncrement: true,
             primaryKey: true, 
             type: DataTypes.INTEGER.UNSIGNED
         },
-        email:{
+        email: {
             type: DataTypes.STRING(50),
-            allowNull: false,
+            
         },
-        contraseña:{
+        contraseña: {
             type: DataTypes.STRING(100),
-            allowNull: false,
+            
         },
-        fechaDeNacimiento:{
+        fechaDeNacimiento: {
             type: DataTypes.DATE 
         },
-        dni:{
+        dni: {
             type: DataTypes.INTEGER.UNSIGNED
         },
-        fotoDePerfil:{
+        fotoDePerfil: {
             type: DataTypes.STRING(100)
         },
-        createdAt:{
+        createdAt: {
             type: DataTypes.DATE 
         },
-        updatedAt:{
+        updatedAt: {
             type: DataTypes.DATE 
         },
-        deletedAt:{
+        deletedAt: {
             type: DataTypes.DATE 
-        },       
-    }   
+        }
+    };
 
-let config ={
-    tableName: "usuarios",
-    timestamps: true,
-    underscored: false,
-}
+    let config = {
+        tableName: "usuarios",
+        timestamps: true,
+        underscored: false
+    };
+
+    let Usuario = sequelize.define(alias, cols, config);
 
 
-let Usuario = sequelize.define(alias,cols,config);
-return Usuario; 
+//  uno a muchos (un usuario tiene muchos comentarios)
+    Usuario.associate = function(models) {
+        Usuario.hasMany(models.Comentario, {
+            as: "comentarios",
+            foreignKey: "idUsuario"
+        });
+    };
 
+    return Usuario;
 };

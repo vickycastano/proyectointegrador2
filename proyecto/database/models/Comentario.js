@@ -1,51 +1,53 @@
 module.exports = function(sequelize, DataTypes){
 
-    let alias = "Comentario"
-    let cols={
-
+    let alias = "Comentario";
+    let cols = {
         id: {
             autoIncrement: true,
             primaryKey: true,
             type: DataTypes.INTEGER.UNSIGNED
         },
-        idPost:{
-            //FOREIGNKEY: true, 
+        idPost: {
             type: DataTypes.INTEGER.UNSIGNED,
-            allowNull: false
+            
         },
-        idUsuario:{
-            //FOREIGNKEY: true, 
+        idUsuario: {
             type: DataTypes.INTEGER.UNSIGNED,
-            allowNull: false
+            
         },
-        createdAt:{
-            type: DataTypes.DATE 
+        createdAt: {
+            type: DataTypes.DATE
         },
-        updatedAt:{
-            type: DataTypes.DATE 
+        updatedAt: {
+            type: DataTypes.DATE
         },
-        deletedAt:{
-            type: DataTypes.DATE 
-        },
+        deletedAt: {
+            type: DataTypes.DATE
+        }
+    };
 
-
-
-    }
 let config ={
     tableName: "comentarios",
     timestamps: false,
-    //underscored: true,
+    underscored: true,
 }
+    let Comentario = sequelize.define(alias, cols, config);
 
-let Comentario = sequelize.define(alias,cols,config);
 
-// contraparte 
-Comentario.associate = function(models) {
-    Comentario.belongsTo(models.Producto, {
-        as: "producto",           
-        foreignKey: "idPost"
-    });
+// uno a uno (un comentario le pertenece a un producto)
+    Comentario.associate = function(models) {
+        Comentario.belongsTo(models.Producto, {
+            as: "producto",
+            foreignKey: "idPost"
+        }); 
+    }
+// uno a uno (un comentario le pertenece a un usuario )
+    Comentario.associate = function(models){
+         Comentario.belongsTo(models.Usuario, {
+            as: "usuario",
+            foreignKey: "idUsuario"
+        });
+    }
+
+    return Comentario;
 };
-
-return Comentario 
-}
