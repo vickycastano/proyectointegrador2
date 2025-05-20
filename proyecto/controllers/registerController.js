@@ -11,6 +11,11 @@ const register ={
     },
 
   create: function(req,res){
+    if (req.session.usuarioLogueado) {
+        return res.redirect('/profile')
+    }
+
+    //validaciones 
     if (req.body.email == '' || req.body.email == undefined){
         return res.send('El email es obligatorio')
     }
