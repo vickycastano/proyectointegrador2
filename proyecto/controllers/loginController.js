@@ -8,24 +8,31 @@ const loginController ={
     function(req, res) {
         res.render('login',);
     },
-
-    // TIRA ERROR 
+ 
     procesar:
     function(req,res){
         let usuario = req.body.username;
         let contrasenia = req.body.password;
+        let recordame = req.body.remember
 
     Usuario.findOne(
         {where:{email : usuario}}
     )
-    .then(function( usuario){
-        if(!usuario){
+    .then(function( usuarioEncontrado){
+        if(!usuarioEncontrado){
             return res.send('no existe este mail')
         }else{
-            let comparar = bcryptjs.compareSync(contrasenia, usuario.contraseña);
-
+            let comparar = bcryptjs.compareSync(contrasenia,usuarioEncontrado.contraseña);
+                // aca aunq ponga la contrasena correcta, me pone q esta mal VER 
             if (comparar){
-                req.session.user = usuario;
+                req.session.user = usuarioEncontrado;
+
+                //ver si cookie funciona 
+                if (recordame){
+                    res.cookie('userEmail', usuarioEncontrado.email, { maxAge: 1000 * 60 * 60 });
+                }
+
+
                 return res.redirect('/profile')
 
             }else{
