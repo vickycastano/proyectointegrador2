@@ -4,7 +4,7 @@ const loginController ={
     function(req, res) {
         res.render('login',);
     }
-
+// hola
 }
 
 module.exports = loginController;
