@@ -4,9 +4,10 @@ const bcrypt = require('bcryptjs');
 const register ={
 
   register: function(req, res) {
-      if (req.session) {
+      if (req.session.usuarioLogueado) {
         return res.redirect('/profile');
       };
+      res.render('register');
     },
 
   create: function(req,res){
