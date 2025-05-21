@@ -36,8 +36,8 @@ app.use(session({secret : "Nuestro mensaje secreto",
 }));
 
 app.use(function(req, res, next){
-  if (req.session.user !=undefined) {   
-    res.locals.user= req.session.user  
+  if (req.session.usuarioLogueado !=undefined) {   
+    res.locals.user= req.session.usuarioLogueado  
   }
   return next();
 })

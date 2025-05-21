@@ -4,7 +4,15 @@
 <%- include('./partials/head') %>
 <body>
 	<!-- Header -->
-<%- include('./partials/headerLougeado') %>
+<% if (locals.user!=undefined) {%>
+
+		<%- include('./partials/headerLogueado') %>
+	
+	  <% } else{ %>
+	
+		<%- include('./partials/header') %>
+		
+	  <%}%>
 	<!-- /Header -->
 
 	<!-- Datos del usuario -->

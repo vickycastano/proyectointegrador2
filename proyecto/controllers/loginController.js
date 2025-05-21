@@ -25,7 +25,7 @@ const loginController ={
             let comparar = bcryptjs.compareSync(contrasenia,usuarioEncontrado.contraseña);
                 // aca aunq ponga la contrasena correcta, me pone q esta mal VER 
             if (comparar != undefined){
-                req.session.user = usuarioEncontrado;
+                req.session.usuarioLogueado = usuarioEncontrado;
 
                 //cookie  
                 if (recordame){
