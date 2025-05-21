@@ -42,6 +42,28 @@ app.use(function(req, res, next){
   return next();
 })
 
+
+// parte de la cookie 
+const db = require('./database/models');
+app.use(function(req, res, next) {
+  if (req.cookies.emailcookie != undefined && req.session.user == undefined) {
+    db.Usuario.findOne({
+      where: { email: req.cookies.usuarioEmail }
+    })
+    .then(function(usuario) {
+      req.session.user = usuario;
+      next();
+    })
+    .catch(function(error) {
+      console.log(error);
+      next();
+    });
+  } else {
+    next();
+  }
+});
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use ('/login', loginRouter);
