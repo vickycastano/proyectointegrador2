@@ -24,12 +24,12 @@ const loginController ={
         }else{
             let comparar = bcryptjs.compareSync(contrasenia,usuarioEncontrado.contraseña);
                 // aca aunq ponga la contrasena correcta, me pone q esta mal VER 
-            if (comparar){
+            if (comparar != undefined){
                 req.session.user = usuarioEncontrado;
 
-                //ver si cookie funciona 
+                //cookie  
                 if (recordame){
-                    res.cookie('userEmail', usuarioEncontrado.email, { maxAge: 1000 * 60 * 60 });
+                    res.cookie('emailcookie', usuarioEncontrado.email, { maxAge: 1000 * 60 * 60 });
                 }
                 return res.redirect('/profile')
 

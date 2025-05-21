@@ -19,11 +19,6 @@ var loginRouter = require('./routes/login');
 
 var app = express();
 
-app.use(session({secret : "Nuestro mensaje secreto",
-  resave: false, 
-  saveUninitialized: true
-}));
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,6 +29,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({secret : "Nuestro mensaje secreto",
+  resave: false, 
+  saveUninitialized: true
+}));
+
+app.use(function(req, res, next){
+  if (req.session.user !=undefined) {   
+    res.locals.user= req.session.user  
+  }
+  return next();
+})
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
