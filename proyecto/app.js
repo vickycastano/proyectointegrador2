@@ -19,6 +19,19 @@ var loginRouter = require('./routes/login');
 
 var app = express();
 
+app.use(session({secret : "Nuestro mensaje secreto",
+  resave: false,
+  saveUninitialized: true
+}));
+
+
+app.use (function(req, res, next){
+    if (req.session.usuarioLogueado != undefined){
+      res.locals.user = req.session.usuarioLogueado;
+    }
+    return next();
+  })
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -28,12 +41,30 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+
+
+const db = require('./database/models');
+app.use(function(req, res, next) {
+  if (req.cookies.usuarioEmail != undefined && req.session.usuarioLogueado == undefined) {
+    db.User.findOne({
+      where: { email: req.cookies.usuarioEmail }
+    })
+    .then(function(usuario) {
+      req.session.usuarioLogueado = usuario;
+      next();
+    })
+    .catch(function(error) {
+      console.log(error);
+      next();
+    });
+  } else {
+    next();
+  }
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(session({secret : "Nuestro mensaje secreto",
-  resave: false, 
-  saveUninitialized: true
-}));
 
 
 app.use('/', indexRouter);
