@@ -12,65 +12,42 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Resultados de búsqueda</h2>
+				<h2 class="products-title">Resultados para: "<%= searchTerm %>"</h2>
 			</div>
 		</div>
 	</div>
 
+	<% if(mensaje) { %>
+		<div class="col-12">
+			<p> <%= mensaje %> </p>
+		</div>
+
+	<% } %>
+
+
 	<!-- Show the "ultimos" products -->
-	<ul>
-	 <li>
-		<div class="col-12 col-sm-6 col-lg-3">
-			<section class="product-box">
-				<a href="/product">
-					<figure class="product-box_image">
-						<img src= <%= datos.productos[0].imagen %> alt="foto del rejor">
-					</figure>
-					<article class="product-box_data">
-						<h2> <%= datos.productos[0].nombreDelProducto %> </h2>
-						<p> <%= datos.productos[0].descripcion %> </p>
-						<p>Comentarios: 12</p>
-					</article>
-				</a>
-			</section>
-		</div>
-	 </li>
-	 <li>
-		<div class="col-12 col-sm-6 col-lg-3">
-			<section class="product-box">
-				<a href="/product">
-					<figure class="product-box_image">
-						<img src= <%= datos.productos[1].imagen %> alt="foto del rejor">
-					</figure>
-					<article class="product-box_data">
-						<h2> <%= datos.productos[1].nombreDelProducto %> </h2>
-						<p> <%= datos.productos[1].descripcion %> </p>
-						<p>Comentarios: 12</p>
-					</article>
-				</a>
-			</section>
-		</div>
-	 </li>
-	 <li>
-		<div class="col-12 col-sm-6 col-lg-3">
-			<section class="product-box">
-				<a href="/product">
-					<figure class="product-box_image">
-						<img src= <%= datos.productos[2].imagen %> alt="foto del rejor" >
-					</figure>
-					<article class="product-box_data">
-						<h2> <%= datos.productos[2].nombreDelProducto %> </h2>
-						<p> <%= datos.productos[2].descripcion %> </p>
-						<p>Comentarios: 12</p>
-					</article>
-				</a>
-			</section>
-		</div>
-	  </li>
-	</ul>
-			
+	<% if (productos.length > 0) { %>
+		<ul>
+		<% for (let i = 0; i < productos.length; i++) { %>
+			<li>
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a href="/product/<%= productos[i].id %>">
+							<figure class="product-box_image">
+								<img src="<%= productos[i].imagenDelProducto %>" alt="foto del producto">
+							</figure>
+							<article class="product-box_data">
+								<h2> <%= productos[i].nombreDelProducto %> </h2>
+								<p> <%= productos[i].descripcion %> </p>
+							</article>
+						</a>
+					</section>
+				</div>
+			</li>
+		<% } %>
+		</ul>
+	<% } %>		
 		
-			
 
 	<!-- footer -->
 	<%- include('./partials/footer') %>
