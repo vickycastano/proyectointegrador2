@@ -28,7 +28,7 @@ const searchresults ={
           return res.render('search-results', {
             productos : resultados,
             searchTerm : searchTerm,
-            mensaje : "null"
+            mensaje : null
           });
         }
       })
