@@ -31,9 +31,9 @@ const loginController ={
 
 
                 if (recordame != undefined){
-                 res.cookie('usuarioEmail', usuarioEncontrado.email, { maxAge: 1000 * 60 * 2 });
+                 res.cookie('usuarioEmail', usuarioEncontrado.email, { maxAge: 1000 * 60 * 60 });
                 }
-                return res.redirect('/');
+                return res.redirect('/profile');
        
         } else {
             return res.send("Contraseña incorrecta");
