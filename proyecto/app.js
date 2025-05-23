@@ -47,7 +47,7 @@ app.use(cookieParser());
 const db = require('./database/models');
 app.use(function(req, res, next) {
   if (req.cookies.usuarioEmail != undefined && req.session.usuarioLogueado == undefined) {
-    db.User.findOne({
+    db.Usuario.findOne({
       where: { email: req.cookies.usuarioEmail }
     })
     .then(function(usuario) {

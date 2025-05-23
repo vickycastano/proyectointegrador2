@@ -10,11 +10,6 @@ const searchresults ={
       db.Producto.findAll({
         where : { 
           nombreDelProducto : { [op.like] : '%' + searchTerm + '%' }
-        },
-
-        include : {
-          all : true,
-          nested : true
         }
       })
       .then(function(resultados){
@@ -22,7 +17,7 @@ const searchresults ={
           return res.render('search-results', {
             productos : [],
             searchTerm : searchTerm,
-            mensaje : 'No se encuentran resultados para su criterio de búsqueda'
+            mensaje : 'No hay resultados para su criterio de búsqueda'
           });
         } else {
           return res.render('search-results', {
