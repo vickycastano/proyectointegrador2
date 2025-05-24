@@ -24,6 +24,9 @@ module.exports = function(sequelize, DataTypes){
         },
         deletedAt: {
             type: DataTypes.DATE 
+        },
+        usuarioId:{
+            type: DataTypes.INTEGER
         }
     };
 
@@ -34,12 +37,17 @@ module.exports = function(sequelize, DataTypes){
 
     let Producto = sequelize.define(alias, cols, config);
 
-// uno a muchos (un producto tiene muchos comentarios)
+//1 a muchos y muchos a 1 
     Producto.associate = function(models) {
         Producto.hasMany(models.Comentario, {
             as: "comentarios",
             foreignKey: "idPost"
         });
+
+        Producto.belongsTo(models.Usuario,{
+            as: "ususarios",
+            foreignKey: "usuario_id"
+        })
     };
 
     return Producto;

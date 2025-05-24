@@ -23,6 +23,9 @@ module.exports = function(sequelize, DataTypes){
         },
         deletedAt: {
             type: DataTypes.DATE
+        },
+        textoComentario:{
+            type: DataTypes.STRING(300)
         }
     };
 
@@ -33,16 +36,15 @@ let config ={
 }
     let Comentario = sequelize.define(alias, cols, config);
 
-
-// uno a uno (un comentario le pertenece a un producto)
+// muchos a uno 
     Comentario.associate = function(models) {
         Comentario.belongsTo(models.Producto, {
-            as: "producto",
+            as: "productos",
             foreignKey: "idPost"
         });
-        // uno a uno (un comentario le pertenece a un usuario )
+
         Comentario.belongsTo(models.Usuario, {
-            as: "usuario",
+            as: "usuarios",
             foreignKey: "idUsuario"
         });
     }
