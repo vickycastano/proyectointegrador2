@@ -41,6 +41,15 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use(function (req, res, next) {
+  if (req.cookies.usuarioEmail != undefined && req.session.user == undefined) {
+    res.locals.user = req.cookies.usuarioEmail
+    req.session.user = req.cookies.usuarioEmail
+  }
+  return next();
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 
