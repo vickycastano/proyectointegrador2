@@ -35,6 +35,19 @@ FOREIGN KEY (idPost) REFERENCES productos(id),
 FOREIGN KEY (idUsuario) REFERENCES usuarios(id)
 );
 
+<<<<<<< HEAD
+=======
+ALTER TABLE productos
+ADD COLUMN usuarioId INT UNSIGNED;
+
+ALTER TABLE productos
+ADD CONSTRAINT usuario_producto
+FOREIGN KEY (usuarioId) REFERENCES usuarios(id);
+
+ALTER TABLE comentarios
+ADD COLUMN textoComentario VARCHAR(300) NOT NULL;
+
+>>>>>>> 136c40ee243e1d7cb536cabf1655b6b31e8dd235
 SELECT * FROM USUARIOS;
 
 INSERT INTO usuarios (id, email, contraseña, fechaDeNacimiento, dni, fotoDePerfil)
@@ -93,3 +106,37 @@ VALUES
 (DEFAULT, 10, 3),
 (DEFAULT, 10, 4),
 (DEFAULT, 10, 5);
+<<<<<<< HEAD
+=======
+
+UPDATE comentarios SET textoComentario = 'Este reloj es elegante y combina con todo, ¡me encanta!' WHERE id = 1;
+UPDATE comentarios SET textoComentario = 'Lo compré para regalar y fue un éxito total. Excelente calidad.' WHERE id = 2;
+UPDATE comentarios SET textoComentario = 'No era lo que esperaba, pero el diseño es interesante.' WHERE id = 3;
+UPDATE comentarios SET textoComentario = 'Este reloj es elegante y combina con todo, ¡me encanta!' WHERE id = 4;
+UPDATE comentarios SET textoComentario = 'Lo compré para regalar y fue un éxito total. Excelente calidad.' WHERE id = 5;
+UPDATE comentarios SET textoComentario = 'No era lo que esperaba, pero el diseño es interesante.' WHERE id = 6;
+UPDATE comentarios SET textoComentario = 'Este reloj es elegante y combina con todo, ¡me encanta!' WHERE id = 7;
+UPDATE comentarios SET textoComentario = 'Lo compré para regalar y fue un éxito total. Excelente calidad.' WHERE id = 8;
+UPDATE comentarios SET textoComentario = 'No era lo que esperaba, pero el diseño es interesante.' WHERE id = 9;
+UPDATE comentarios SET textoComentario = 'Este reloj es elegante y combina con todo, ¡me encanta!' WHERE id = 10;
+UPDATE comentarios SET textoComentario = 'Lo compré para regalar y fue un éxito total. Excelente calidad.' WHERE id = 11;
+UPDATE comentarios SET textoComentario = 'No era lo que esperaba, pero el diseño es interesante.' WHERE id = 12;
+UPDATE comentarios SET textoComentario = 'Este reloj es elegante y combina con todo, ¡me encanta!' WHERE id = 13;
+UPDATE comentarios SET textoComentario = 'Lo compré para regalar y fue un éxito total. Excelente calidad.' WHERE id = 14;
+UPDATE comentarios SET textoComentario = 'No era lo que esperaba, pero el diseño es interesante.' WHERE id = 15;
+UPDATE comentarios SET textoComentario = 'Este reloj es elegante y combina con todo, ¡me encanta!' WHERE id = 16;
+UPDATE comentarios SET textoComentario = 'Lo compré para regalar y fue un éxito total. Excelente calidad.' WHERE id = 17;
+UPDATE comentarios SET textoComentario = 'No era lo que esperaba, pero el diseño es interesante.' WHERE id = 18;
+UPDATE comentarios SET textoComentario = 'Este reloj es elegante y combina con todo, ¡me encanta!' WHERE id = 19;
+UPDATE comentarios SET textoComentario = 'Lo compré para regalar y fue un éxito total. Excelente calidad.' WHERE id = 20;
+UPDATE comentarios SET textoComentario = 'No era lo que esperaba, pero el diseño es interesante.' WHERE id = 21;
+UPDATE comentarios SET textoComentario = 'Este reloj es elegante y combina con todo, ¡me encanta!' WHERE id = 22;
+UPDATE comentarios SET textoComentario = 'Lo compré para regalar y fue un éxito total. Excelente calidad.' WHERE id = 23;
+UPDATE comentarios SET textoComentario = 'No era lo que esperaba, pero el diseño es interesante.' WHERE id = 24;
+UPDATE comentarios SET textoComentario = 'Este reloj es elegante y combina con todo, ¡me encanta!' WHERE id = 25;
+UPDATE comentarios SET textoComentario = 'Lo compré para regalar y fue un éxito total. Excelente calidad.' WHERE id = 26;
+UPDATE comentarios SET textoComentario = 'No era lo que esperaba, pero el diseño es interesante.' WHERE id = 27;
+UPDATE comentarios SET textoComentario = 'Este reloj es elegante y combina con todo, ¡me encanta!' WHERE id = 28;
+UPDATE comentarios SET textoComentario = 'Lo compré para regalar y fue un éxito total. Excelente calidad.' WHERE id = 29;
+UPDATE comentarios SET textoComentario = 'No era lo que esperaba, pero el diseño es interesante.' WHERE id = 30;
+>>>>>>> 136c40ee243e1d7cb536cabf1655b6b31e8dd235
