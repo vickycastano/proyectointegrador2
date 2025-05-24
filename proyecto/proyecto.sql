@@ -35,6 +35,13 @@ FOREIGN KEY (idPost) REFERENCES productos(id),
 FOREIGN KEY (idUsuario) REFERENCES usuarios(id)
 );
 
+ALTER TABLE productos
+ADD COLUMN usuarioId INT UNSIGNED;
+
+ALTER TABLE productos
+ADD CONSTRAINT usuario_producto
+FOREIGN KEY (usuarioId) REFERENCES usuarios(id);
+
 SELECT * FROM USUARIOS;
 
 INSERT INTO usuarios (id, email, contraseña, fechaDeNacimiento, dni, fotoDePerfil)
@@ -58,6 +65,10 @@ VALUES
 (DEFAULT,"images/products/raymondweildama.webp", "Raymond Weil Dama", "Un reloj femenino con un diseño clásico y elegante. Su esfera blanca con números romanos y su correa de cuero negro le dan un toque sofisticado y atemporal. Perfecto para quienes buscan un accesorio refinado para cualquier ocasión."),
 (DEFAULT,"images/products/tagheuer.webp", "Tag Heuer- Formula 1", "Diseñado para los amantes de la velocidad y la adrenalina, este reloj deportivo cuenta con una caja robusta y un bisel giratorio con marcadores de tiempo. Su combinación de colores le da un aspecto dinámico y audaz."),
 (DEFAULT,"images/products/tagheuerprofessional.webp", "Tag Heuer Professional 2000", "Un modelo de inspiración náutica con un diseño resistente y funcional. Su caja de acero con detalles dorados y su bisel giratorio lo hacen ideal para quienes buscan un reloj versátil y duradero.");
+
+UPDATE productos
+SET usuarioId = 1
+WHERE usuarioId IS NULL;
 
 SELECT * FROM COMENTARIOS;
 
