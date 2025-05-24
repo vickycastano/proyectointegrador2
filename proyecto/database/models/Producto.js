@@ -45,7 +45,7 @@ module.exports = function(sequelize, DataTypes){
         });
 
         Producto.belongsTo(models.Usuario,{
-            as: "ususarios",
+            as: "usuarios",
             foreignKey: "usuario_id"
         })
     };
