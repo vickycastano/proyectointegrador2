@@ -24,7 +24,7 @@ app.use(session({secret : "Nuestro mensaje secreto",
   saveUninitialized: true
 }));
 
-//hace que los datos del usuario logueado estén disponibles en las vistas del sitio.
+
 app.use (function(req, res, next){
     if (req.session.usuarioLogueado != undefined){
       res.locals.user = req.session.usuarioLogueado;
@@ -41,20 +41,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-
-
-//mantiene al usuario logueado usando la cookie si su sesión aún no está activa
-app.use(function (req, res, next) {
-  if (req.cookies.usuarioEmail != undefined && req.session.usuarioLogueado == undefined) {
-    res.locals.user = req.cookies.usuarioEmail
-    req.session.user = req.cookies.usuarioEmail
-  }
-  return next();
-});
-
-
-
-
 app.use(express.static(path.join(__dirname, 'public')));
 
 

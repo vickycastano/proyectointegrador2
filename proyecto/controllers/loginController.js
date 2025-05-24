@@ -18,7 +18,7 @@ const loginController ={
         let recordame = req.body.remember;
 
 
-        db.Usuario.findOne({
+    db.Usuario.findOne({
     where: { email: emailIngresado }
     })
     .then(function(usuarioEncontrado) {
