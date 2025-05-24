@@ -39,11 +39,9 @@ let config ={
         Comentario.belongsTo(models.Producto, {
             as: "producto",
             foreignKey: "idPost"
-        }); 
-    }
-// uno a uno (un comentario le pertenece a un usuario )
-    Comentario.associate = function(models){
-         Comentario.belongsTo(models.Usuario, {
+        });
+        // uno a uno (un comentario le pertenece a un usuario )
+        Comentario.belongsTo(models.Usuario, {
             as: "usuario",
             foreignKey: "idUsuario"
         });

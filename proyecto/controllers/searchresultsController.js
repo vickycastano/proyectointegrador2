@@ -1,3 +1,4 @@
+const { Association } = require('sequelize');
 const db = require ('../database/models');
 let op = db.Sequelize.Op;
 
@@ -10,7 +11,10 @@ const searchresults ={
       db.Producto.findAll({
         where : { 
           nombreDelProducto : { [op.like] : '%' + searchTerm + '%' }
-        }
+        },
+        include : [
+          { association: 'comentarios', include: [{ association: 'usuario' }] }
+        ]
       })
       .then(function(resultados){
         if (resultados.length == 0){

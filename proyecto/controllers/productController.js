@@ -1,9 +1,20 @@
-const datos = require("../db/modulodedatos");
+const { Association } = require('sequelize');
+const db = require('../database/models');
 
 const productController={
-    product:
-    function(req, res) {
-        res.render('product', {datos: datos});
+    detail: function(req, res) {
+        const idProducto = req.params.id;
+
+        db.Producto.findByPk(idProducto, {
+            include : [{ association: 'creador'}]
+        })
+        .then(function (producto){
+            res.render('product-detail', {producto : producto});
+        })
+        .catch (function(error){
+            console.log(error);
+        })
+    
     }
 }
 

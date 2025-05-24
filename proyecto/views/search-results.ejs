@@ -49,6 +49,13 @@
 								<p> <%= productos[i].descripcion %> </p>
 							</article>
 						</a>
+						<% if (productos[i].comentarios.length > 0){ %>
+							<p>Cargado por: <a href="/profile/<%= productos[i].comentarios[0].usuario.id %>""> 
+							</a>
+							</p>
+						<% } %>
+
+
 					</section>
 				</div>
 			</li>
