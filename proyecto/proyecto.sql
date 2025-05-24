@@ -42,6 +42,9 @@ ALTER TABLE productos
 ADD CONSTRAINT usuario_producto
 FOREIGN KEY (usuarioId) REFERENCES usuarios(id);
 
+ALTER TABLE comentarios
+ADD COLUMN textoComentario VARCHAR(300) NOT NULL;
+
 SELECT * FROM USUARIOS;
 
 INSERT INTO usuarios (id, email, contraseña, fechaDeNacimiento, dni, fotoDePerfil)
