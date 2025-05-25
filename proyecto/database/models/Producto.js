@@ -1,43 +1,43 @@
-module.exports = function(sequelize, DataTypes){
-
+module.exports = function(sequelize, dataTypes) {
     let alias = "Producto";
+  
     let cols = {
-        id: {
-            autoIncrement: true,
-            primaryKey: true,
-            type: DataTypes.INTEGER.UNSIGNED 
-        },
-        imagenDelProducto: {
-            type: DataTypes.STRING(50)
-        },
-        nombreDelProducto: {
-            type: DataTypes.STRING(50)
-        },
-        descripcion: {
-            type: DataTypes.STRING(300)
-        },
-        createdAt: {
-            type: DataTypes.DATE 
-        },
-        updatedAt: {
-            type: DataTypes.DATE 
-        },
-        deletedAt: {
-            type: DataTypes.DATE 
-        },
-        usuarioId:{
-            type: DataTypes.INTEGER
-        }
+      id: {
+        autoIncrement: true,
+        primaryKey: true,
+        type: dataTypes.INTEGER
+      },
+      usuarioId: {
+        type:dataTypes.INTEGER
+      },
+      imagenDelProducto: {
+        type:dataTypes.STRING
+      },
+      nombreDelProducto:{
+        type: dataTypes.STRING
+      },
+      descripcion: {
+        type:dataTypes.STRING
+      },
+      createdAt: {
+        type:dataTypes.DATE
+      },
+      updatedAt: {
+        type:dataTypes.DATE
+      }, 
+      deletedAt: {
+        type: dataTypes.DATE
+      },
     };
-
+  
     let config = {
-        tableName: "productos",
-        timestamps: true
+      tableName: "productos",
+      timestamps: true
     };
+  
+    const Producto = sequelize.define(alias, cols, config);
 
-    let Producto = sequelize.define(alias, cols, config);
-
-//1 a muchos y muchos a 1 
+    //1 a muchos y muchos a 1 
     Producto.associate = function(models) {
         Producto.hasMany(models.Comentario, {
             as: "comentarios",
@@ -50,5 +50,7 @@ module.exports = function(sequelize, DataTypes){
         })
     };
 
-    return Producto;
-};
+
+      return Producto;
+  };
+  

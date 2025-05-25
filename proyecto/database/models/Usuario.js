@@ -1,38 +1,35 @@
-module.exports = function(sequelize, DataTypes){
-
+module.exports = function(sequelize, dataTypes) {
     let alias = "Usuario";
     let cols = {
         id: {
             autoIncrement: true,
-            primaryKey: true, 
-            type: DataTypes.INTEGER.UNSIGNED
+            primaryKey: true,
+            type: dataTypes.INTEGER
         },
         email: {
-            type: DataTypes.STRING(50),
-            
-        },
-        contraseña: {
-            type: DataTypes.STRING(100),
-            
+            type: dataTypes.STRING
+        }, 
+        contraseña:{
+            type:  dataTypes.STRING
         },
         fechaDeNacimiento: {
-            type: DataTypes.DATE 
-        },
+            type:dataTypes.DATE
+        }, 
         dni: {
-            type: DataTypes.INTEGER.UNSIGNED
-        },
+            type: dataTypes.INTEGER
+        }, 
         fotoDePerfil: {
-            type: DataTypes.STRING(100)
+            type:dataTypes.STRING
         },
         createdAt: {
-            type: DataTypes.DATE 
-        },
-        updatedAt: {
-            type: DataTypes.DATE 
+            type: dataTypes.DATE
+        }, 
+        updatedAt:{
+            type: dataTypes.DATE
         },
         deletedAt: {
-            type: DataTypes.DATE 
-        }
+            type: dataTypes.DATE
+        },
     };
 
     let config = {
@@ -42,9 +39,7 @@ module.exports = function(sequelize, DataTypes){
 
     let Usuario = sequelize.define(alias, cols, config);
 
-// 1 a muchos 
-
-    Usuario.associate = function(models) {
+     Usuario.associate = function(models) {
         Usuario.hasMany(models.Comentario, {
             as: "comentarios",
             foreignKey: "idUsuario"
