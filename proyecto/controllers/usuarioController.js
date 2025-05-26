@@ -1,18 +1,18 @@
 const db = require('../database/models');
 const bcrypt = require('bcryptjs');
 
-const usuarioController ={
+const usuarioController = {
 
   register: function(req, res) {
       if (req.session.usuarioLogueado) {
-        return res.redirect('/profile');
+        return res.redirect('/usuario/profile');
       };
       res.render('register');
     },
 
   create: function(req,res){
     if (req.session.usuarioLogueado) {
-        return res.redirect('/profile')
+        return res.redirect('/usuario/profile')
     }
 
     //validaciones 
@@ -48,16 +48,15 @@ const usuarioController ={
         fotoDePerfil: req.body.fotoDePerfil
       })
       .then (function(usuarioCreado){
-        res.redirect('/login')
+        res.redirect('/usuario/login')
       });
 
     });
 
   },
-  login: 
-      function(req, res) {
+  login: function(req, res) {
              if (req.session.usuarioLogueado) {
-              return res.redirect('/profile');
+              return res.redirect('/usuario/profile');
           }else{
               return res.render("login");
           }
@@ -83,7 +82,7 @@ const usuarioController ={
                   if (recordame != undefined){
                    res.cookie('usuarioEmail', usuarioEncontrado.email, { maxAge: 1000 * 60 * 60 });
                   }
-                  return res.redirect('/profile');
+                  return res.redirect('/usuario/profile');
          
           } else {
               return res.send("Contraseña incorrecta");
@@ -102,11 +101,35 @@ const usuarioController ={
               return res.redirect('/');
           });
       },
-       profile: 
-    function(req, res) {
-        res.render('profile', {datos: datos});
-      }
+      profile: function(req, res) {
+        if (!req.session.usuarioLogueado) {
+          return res.redirect('/usuario/login'); // o lo que uses como ruta de login
+        }
+    
+        const userId = req.session.usuarioLogueado.id;
+    
+        db.Usuario.findByPk(userId, {
+          include: [
+            {
+              association: 'productos'
+            }
+          ]
+        })
+        .then(usuario => {
+          if (!usuario) {
+            return res.send('Usuario no encontrado');
+          }
+    
+          return res.render('profile', {
+            usuario: usuario,
+            productos: usuario.productos // asegurate de que esto exista
+          });
+        })
+        .catch(error => {
+          console.error('Error al obtener perfil:', error);
+          res.send('Error al cargar el perfil del usuario');
+        });
+  }
 };
-// prueba de commit 22222
 
 module.exports = usuarioController;

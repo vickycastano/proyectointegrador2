@@ -4,6 +4,7 @@ const usuarioController = require('../controllers/usuarioController')
 
 //profile
 router.get('/profile', usuarioController.profile);
+router.get('/profile/:id', usuarioController.profile);
 
 // registro 
 router.get('/register', usuarioController.register);
