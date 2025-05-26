@@ -102,18 +102,20 @@ const usuarioController = {
           });
       },
       profile: function(req, res) {
-        if (!req.session.usuarioLogueado) {
+        let userId;
+
+        if (req.params.id) {
+          userId = req.params.id;
+        } else if (req.session.usuarioLogueado) {
+          userId = req.session.usuarioLogueado.id;
+        } else {
           return res.redirect('/usuario/login');
         }
-    
-        const userId = req.session.usuarioLogueado.id;
     
         db.Usuario.findByPk(userId, {
           include: [{association: 'productos'}]
         })
         .then(function (usuario){
-          console.log(usuario);
-          
           if (!usuario) {
             return res.send('Usuario no encontrado');
           }
