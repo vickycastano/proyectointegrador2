@@ -103,30 +103,27 @@ const usuarioController = {
       },
       profile: function(req, res) {
         if (!req.session.usuarioLogueado) {
-          return res.redirect('/usuario/login'); // o lo que uses como ruta de login
+          return res.redirect('/usuario/login');
         }
     
         const userId = req.session.usuarioLogueado.id;
     
         db.Usuario.findByPk(userId, {
-          include: [
-            {
-              association: 'productos'
-            }
-          ]
+          include: [{association: 'productos'}]
         })
-        .then(usuario => {
+        .then(function (usuario){
+          console.log(usuario);
+          
           if (!usuario) {
             return res.send('Usuario no encontrado');
           }
     
           return res.render('profile', {
             usuario: usuario,
-            productos: usuario.productos // asegurate de que esto exista
+            productos: usuario.productos 
           });
         })
-        .catch(error => {
-          console.error('Error al obtener perfil:', error);
+        .catch(function (error) {
           res.send('Error al cargar el perfil del usuario');
         });
   }
