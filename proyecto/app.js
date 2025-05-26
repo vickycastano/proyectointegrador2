@@ -6,15 +6,8 @@ var logger = require('morgan');
 const session = require('express-session');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var productaddRouter = require('./routes/product-add');
-var productRouter = require('./routes/product');
-var profileRouter = require('./routes/profile');
-var registerRouter = require('./routes/register');
-var searchresultsRouter = require('./routes/search-results');
-var loginRouter = require('./routes/login');
-
-
+var usuarioRouter = require('./routes/usuario');
+var productoRouter = require('./routes/producto');
 
 
 var app = express();
@@ -56,13 +49,8 @@ app.use(function (req, res, next) {
 
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use ('/login', loginRouter);
-app.use('/productadd', productaddRouter);
-app.use('/product', productRouter);
-app.use('/profile', profileRouter);
-app.use('/register', registerRouter);
-app.use('/searchresults', searchresultsRouter);
+app.use('/usuario', usuarioRouter);
+app.use ('/producto', productoRouter);
 
 
 

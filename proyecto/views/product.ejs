@@ -20,7 +20,7 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"> <%= producto.nombreDelProducto %> </h2> 
 			<p class="product-detail-description">
-				<a href="/productadd"> Editar </a>
+				<a href="/producto/productadd"> Editar </a>
 			</p>
 		</div>
 		<div class="product-detail">
@@ -28,7 +28,7 @@
 				<article class="col-12 col-lg-8 product-detail-info">
 					<img src="images/products/img-home-banner.jpg" alt="fotodelproducto" class="product-detail-img">
 					<p class="product-detail-description"> <%= producto.descripcion %> </p>
-					<p> Publicado por: <a href="/profile/<%= producto.usuarios.id %>"><%= producto.usuarios.email %></a> </p>
+					<p> Publicado por: <a href="/usuario/profile/<%= producto.usuarios.id %>"><%= producto.usuarios.email %></a> </p>
 				</article>
 
 				<div class="col-12 col-lg-4">
@@ -41,7 +41,7 @@
 						   <div class="data">
 							 <p class="user">
 							   <strong>
-								 <a href="/profile/<%= producto.comentarios[i].id %>">
+								 <a href="/usuario/profile/<%= producto.comentarios[i].id %>">
 								   <%= producto.comentarios[i].id %>
 								 </a>
 							   </strong>

@@ -30,17 +30,17 @@
 			<nav class="main-navbar">
 				<ul class="left-navbar">
 					<li><a href="/">Todos los productos</a></li>
-					<li><a href="/productadd">Cargar productos</a></li>
+					<li><a href="/producto/productadd">Cargar productos</a></li>
 				</ul>
 
 				<h2><strong> Bienvenid@ <%=  user.email %> a Leiva!</strong></h4>
 	
 				<ul class="right-navbar">
-					<li><a href="/profile"> Mi perfil <i class="fas fa-user"></i>
+					<li><a href="/usuario/profile"> Mi perfil <i class="fas fa-user"></i>
 						</a>
 					</li>
 					<li>
-						<form action="/login/logout" method="get">
+						<form action="/usuario/logout" method="get">
 							<button class="logout" type="submit">
 								Cerrar sesión <i class="fas fa-sign-in-alt"></i>
 							</button>

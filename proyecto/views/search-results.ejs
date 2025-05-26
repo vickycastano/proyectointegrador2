@@ -40,7 +40,7 @@
 			<li>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href="/product/<%= productos[i].id %>">
+						<a href="/producto/product/<%= productos[i].id %>">
 							<figure class="product-box_image">
 								<img src="<%= productos[i].imagenDelProducto %>" alt="foto del producto">
 							</figure>
@@ -50,7 +50,7 @@
 							</article>
 						</a>
 						<p> Creado por:
-							<a href="/user/profile/<%= productos[i].usuarios.id %>">
+							<a href="/usuario/profile/<%= productos[i].usuarios.id %>">
 								<%= productos[i].usuarios.email %>
 							</a>
 						</p>
