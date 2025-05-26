@@ -5,7 +5,7 @@ let op = db.Sequelize.Op;
 const productoController ={
     productadd: 
     function(req, res) {
-        res.render('product-add',{datos: datos});
+        res.render('product-add');
         
       },
       detail: function(req, res) {
