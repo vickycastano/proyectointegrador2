@@ -26,28 +26,39 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%= producto.imagenDelProducto %>"" alt="fotodelproducto" class="product-detail-img">
+					<img src="images/products/img-home-banner.jpg" alt="fotodelproducto" class="product-detail-img">
 					<p class="product-detail-description"> <%= producto.descripcion %> </p>
-					<p> Publicado por: <a href="/profile/<%= producto.creador.id %>"><%= producto.creador.email %></a> </p>
+					<p> Publicado por: <a href="/profile/<%= producto.usuarios.id %>"><%= producto.usuarios.email %></a> </p>
+					<p><%= producto.imagenDelProducto %></p>
+					
 				</article>
 
 				<div class="col-12 col-lg-4">
 					<section class="comments">
+						
 						<% for (let i = 0; i < producto.comentarios.length; i++) { %>
-						<article>
-							<img src= "<%= producto.comentarios[i].usuario.fotoDePerfil %>" alt="foto del producto">
-							<div class="data">
-								<p class="user">
-								<strong> 
-									<a href="/profile/<%= producto.comentarios[i].usuario.id %>">  
-										<%= producto.comentarios[i].usuario.email %>
-									</a>
-								</strong>:
-								<%= producto.comentarios[i].comentario %> 
-								</p>
-							</div>
-						</article>
-				<% } %>
+							
+							
+							
+							
+				
+						 
+						 <article>
+						   
+						   <div class="data">
+							 <p class="user">
+							   <strong>
+								 <a href="/profile/<%= producto.comentarios[i].id %>">
+								   <%= producto.comentarios[i].id %>
+								 </a>
+							   </strong>
+							   <br>
+							   <%= producto.comentarios[i].comentario %>
+							 </p>
+						   </div>
+						 </article>
+						 	
+					   <%   } %>
 					</section>
 
 					<form class="form" action="/" method="get">
