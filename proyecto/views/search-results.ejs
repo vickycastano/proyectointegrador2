@@ -49,11 +49,11 @@
 								<p> <%= productos[i].descripcion %> </p>
 							</article>
 						</a>
-						<% if (productos[i].comentarios.length > 0){ %>
-							<p>Cargado por: <a href="/profile/<%= productos[i].comentarios[0].usuario.id %>""> 
+						<p> Creado por:
+							<a href="/user/profile/<%= productos[i].usuarios.id %>">
+								<%= productos[i].usuarios.email %>
 							</a>
-							</p>
-						<% } %>
+						</p>
 
 
 					</section>

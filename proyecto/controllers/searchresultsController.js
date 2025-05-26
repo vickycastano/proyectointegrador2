@@ -12,10 +12,8 @@ const searchresults ={
         where : { 
           nombreDelProducto : { [op.like] : '%' + searchTerm + '%' }
         },
-        include : [
-          { association: 'comentarios', include: [{ association: 'usuario' }] }
-        ]
-      })
+        include :[{ association: 'usuarios' }] }
+      )
       .then(function(resultados){
         if (resultados.length == 0){
           return res.render('search-results', {

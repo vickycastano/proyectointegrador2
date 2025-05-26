@@ -3,19 +3,17 @@ const db = require('../database/models');
 
 const productController={
     detail: function(req, res) {
-        const idProducto = req.params.id;
-
-        db.Producto.findByPk(idProducto, {
-            include : [{ association: 'creador'}]
+        db.Producto.findByPk(req.params.id, {
+          
         })
-        .then(function (producto){
-            res.render('product-detail', {producto : producto});
+        .then(function(producto) {
+          return res.render('product', { producto: producto });
         })
-        .catch (function(error){
-            console.log(error);
-        })
-    
+        .catch(function(error) {
+          console.log(error);
+          res.send("Error al buscar el producto");
+        });
+      }
     }
-}
-
-module.exports = productController;
+    
+    module.exports = productController;
