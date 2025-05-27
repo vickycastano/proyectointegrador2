@@ -14,7 +14,7 @@ const indexController={
 
     },
     searchresults: 
-        function(req, res) {
+    function(req, res) {
           const searchTerm = req.query.search;
     
           db.Producto.findAll({
@@ -41,7 +41,7 @@ const indexController={
           .catch(function(error){
             console.log(error);
           })
-          }
+  }
 }
 
 module.exports = indexController;

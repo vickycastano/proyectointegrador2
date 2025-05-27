@@ -5,14 +5,23 @@ let op = db.Sequelize.Op;
 const productoController ={
     productadd: 
     function(req, res) {
-        res.render('product-add');
-        
-      },
-      detail: function(req, res) {
+       if (req.session.usuarioLogueado) {
+            return res.render("product-add");
+        }else{
+            return res.redirect('/usuario/login');
+        }
+
+    },
+    nuevoproducto:
+    function(req,res){
+
+    },
+    detail: 
+    function(req, res) {
               db.Producto.findByPk(req.params.id, {
                   include: [
                       { association: 'usuarios' }, 
-                      { association: 'comentarios', include: [{ association: 'usuarios' }] }
+                      { association: 'comentarios'}
                     ]
               })
               .then(function(producto) {
@@ -24,7 +33,7 @@ const productoController ={
                 console.log(error);
                 res.send("Error al buscar el producto");
               });
-            }
+    },
 }
 
 module.exports = productoController;

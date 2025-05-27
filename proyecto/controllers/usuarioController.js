@@ -3,23 +3,22 @@ const bcrypt = require('bcryptjs');
 
 const usuarioController = {
 
-  register: function(req, res) {
+  register: 
+  function(req, res) {
       if (req.session.usuarioLogueado) {
         return res.redirect('/usuario/profile');
       };
       res.render('register');
-    },
-
-  create: function(req,res){
+  },
+  create: 
+  function(req,res){
     if (req.session.usuarioLogueado) {
         return res.redirect('/usuario/profile')
     }
-
     //validaciones 
     if (req.body.email == '' || req.body.email == undefined){
         return res.send('El email es obligatorio')
     }
-
 
     if (req.body.password == '' || req.body.password == undefined) {
         return res.send('La contraseña es obligatoria')
@@ -27,7 +26,6 @@ const usuarioController = {
     if (req.body.password.length < 3) {
         return res.send('La contraseña debe tener al menos 3 caracteres')
     }
-
 
     db.Usuario.findOne({
       where : {email : req.body.email}
@@ -54,14 +52,16 @@ const usuarioController = {
     });
 
   },
-  login: function(req, res) {
-             if (req.session.usuarioLogueado) {
+  login: 
+  function(req, res) {
+          if (req.session.usuarioLogueado) {
               return res.redirect('/usuario/profile');
           }else{
               return res.render("login");
           }
-      }, procesa:
-      function(req,res){
+  }, 
+  procesa:
+  function(req,res){
           let emailIngresado = req.body.username;
           let claveIngresada = req.body.password;
           let recordame = req.body.remember;
@@ -94,14 +94,16 @@ const usuarioController = {
         return res.send("Error al intentar loguear");
       });
      
-      },
-      logout: function(req,res){
+  },
+  logout: 
+  function(req,res){
           req.session.destroy(function() {
               res.clearCookie('usuarioEmail');
               return res.redirect('/');
           });
-      },
-      profile: function(req, res) {
+  },
+  profile: 
+  function(req, res) {
         let userId;
 
         if (req.params.id) {
