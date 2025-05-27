@@ -15,13 +15,26 @@ const productoController ={
     nuevoproducto:
     function(req,res){
 
+      db.Producto.create({
+        usuarioId: req.session.usuarioLogueado.id,
+        imagenDelProducto: req.body.image,
+        nombreDelProducto: req.body.productname,
+        descripcion: req.body.descripcion,
+      })
+      .then(function(){
+        res.redirect('/usuario/profile')
+      })
+      .catch(function(error){
+        console.log(error)
+      })
+
     },
     detail: 
     function(req, res) {
               db.Producto.findByPk(req.params.id, {
                   include: [
                       { association: 'usuarios' }, 
-                      { association: 'comentarios'}
+                      { association: 'comentarios', include: [{ association: 'usuarios' }]}
                     ]
               })
               .then(function(producto) {
