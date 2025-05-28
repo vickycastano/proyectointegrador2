@@ -8,4 +8,6 @@ router.get('/product/:id', productoController.detail);
 router.get('/productadd',productoController.productadd);
 router.post('/productadd', productoController.nuevoproducto);
 
+router.post('/comentar/:id', productoController.comentar);
+
 module.exports = router;

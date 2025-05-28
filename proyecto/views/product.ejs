@@ -35,9 +35,7 @@
 					<section class="comments">
 						
 						<% for (let i = 0; i < producto.comentarios.length; i++) { %>
-							
 						 <article>
-						   
 						   <div class="data">
 							 <p class="user">
 							   <strong>
@@ -50,14 +48,14 @@
 							 </p>
 						   </div>
 						 </article>
-						 	
 					   <%   } %>
 					</section>
 
-					<form class="form" action="/" method="get">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+					<form class="form" action="/producto/comentar/<%= producto.id %>" method="POST">
+						<input class="form-input" type="text" name="comentario" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form>
+				
 					<hr>
 				</div>
 			</div>
