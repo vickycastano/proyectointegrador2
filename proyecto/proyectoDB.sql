@@ -38,26 +38,26 @@ FOREIGN KEY (idUsuario) REFERENCES usuarios(id)
 SELECT * FROM USUARIOS;
 INSERT INTO usuarios (id, email, contraseña, fechaDeNacimiento, dni, fotoDePerfil)
 VALUES 
-(DEFAULT, "vicky@gmail.com", "1234vicky", "2005-09-15", 12345678, "images/users/uservi.jpg"),
-(DEFAULT, "lunapixel_93@gmail.com", "fYFAEl4Etw", "1996-09-20", 44097247, "images/users/user1.webp"),
-(DEFAULT, "neozafirox@gmail.com", "5ZaLjZ7aes", "2003-06-18",17402384, "images/users/user2.jpg"),
-(DEFAULT, "caféen8bits@gmail.com", "JOEqZQQMMM", "1985-10-17", 90405264, "images/users/user3.jpg"), 
-(DEFAULT, "sombrasdelsur@gmail.com", "9tAM5q8265", "1985-07-01", 12824561, "images/users/user4.jpg"),
-(DEFAULT, "heladocósmico@gmail.com", "hJKg4LAmYe", "2000-06-24", 65791676, "images/users/user5.jpeg");
+(DEFAULT, "vicky@gmail.com", "1234vicky", "2005-09-15", 12345678, "uservi.jpg"),
+(DEFAULT, "lunapixel_93@gmail.com", "fYFAEl4Etw", "1996-09-20", 44097247, "user1.webp"),
+(DEFAULT, "neozafirox@gmail.com", "5ZaLjZ7aes", "2003-06-18",17402384, "user2.jpg"),
+(DEFAULT, "caféen8bits@gmail.com", "JOEqZQQMMM", "1985-10-17", 90405264, "user3.jpg"), 
+(DEFAULT, "sombrasdelsur@gmail.com", "9tAM5q8265", "1985-07-01", 12824561, "user4.jpg"),
+(DEFAULT, "heladocósmico@gmail.com", "hJKg4LAmYe", "2000-06-24", 65791676, "user5.jpeg");
 
 SELECT * FROM PRODUCTOS;
 INSERT INTO productos (id, usuarioId, imagenDelProducto, nombreDelProducto, descripcion)
 VALUES 
-(DEFAULT,1, "images/products/baumeymercier.webp", "Baume & Mercier- CATWALK", "Un reloj con un diseño limpio y minimalista. Su caja cuadrada y su brazalete de acero le otorgan un aspecto moderno y elegante, ideal para quienes buscan un estilo sobrio pero sofisticado."),
-(DEFAULT,1, "images/products/bulgarisolotempo.webp", "Bulgari Solotempo", "Un reloj moderno y llamativo, con un diseño minimalista pero impactante. Su caja de acero y correa de cuero negro combinan a la perfección con la esfera con números grandes y estilizados. Ideal para quienes buscan lujo con un toque contemporáneo."),
-(DEFAULT,1, "images/products/corumromvlvs.webp", "Corum Romvlvs", "Un reloj de lujo con una estética clásica y sofisticada. Su esfera limpia con números romanos grabados en el bisel y su combinación de acero y oro lo convierten en un accesorio elegante y exclusivo."), 
-(DEFAULT,1, "images/products/emporloarmani.webp", "Emporio Armani", "Un reloj de estilo clásico con un aire deportivo gracias a su cronógrafo. Su caja de acero, esfera beige con detalles en negro y su correa de cuero le dan un aspecto sofisticado y masculino. Ideal para quienes buscan elegancia con funcionalidad."),
-(DEFAULT,1, "images/products/longinesbellearti.webp", "Longines -Belle Arti", "Inspirado en el Art Deco, este reloj de Longines combina un diseño rectangular con una esfera negra sofisticada. Su brazalete de acero y sus detalles clásicos lo convierten en una excelente opción para quienes buscan distinción."),
-(DEFAULT,1,"images/products/longinesdolcevita.webp", "Longines DolceVita", "Un modelo elegante con un diseño rectangular que lo hace destacar. Su caja de acero y su brazalete metálico brindan un look refinado, mientras que su esfera blanca con detalles sencillos refleja sofisticación y lujo. Perfecto para quienes buscan un reloj distinguido y versátil."),
-(DEFAULT,1,"images/products/radodiastarcremico.webp", "Rado Diastar Cremico", "Un reloj sofisticado con un diseño minimalista y elegante. Su caja y brazalete en cerámica blanca con detalles dorados le otorgan un look refinado y exclusivo. Ideal para quienes buscan un estilo moderno y lujoso."),
-(DEFAULT,1,"images/products/raymondweildama.webp", "Raymond Weil Dama", "Un reloj femenino con un diseño clásico y elegante. Su esfera blanca con números romanos y su correa de cuero negro le dan un toque sofisticado y atemporal. Perfecto para quienes buscan un accesorio refinado para cualquier ocasión."),
-(DEFAULT,1,"images/products/tagheuer.webp", "Tag Heuer- Formula 1", "Diseñado para los amantes de la velocidad y la adrenalina, este reloj deportivo cuenta con una caja robusta y un bisel giratorio con marcadores de tiempo. Su combinación de colores le da un aspecto dinámico y audaz."),
-(DEFAULT,1,"images/products/tagheuerprofessional.webp", "Tag Heuer Professional 2000", "Un modelo de inspiración náutica con un diseño resistente y funcional. Su caja de acero con detalles dorados y su bisel giratorio lo hacen ideal para quienes buscan un reloj versátil y duradero.");
+(DEFAULT,1, "baumeymercier.webp", "Baume & Mercier- CATWALK", "Un reloj con un diseño limpio y minimalista. Su caja cuadrada y su brazalete de acero le otorgan un aspecto moderno y elegante, ideal para quienes buscan un estilo sobrio pero sofisticado."),
+(DEFAULT,1, "bulgarisolotempo.webp", "Bulgari Solotempo", "Un reloj moderno y llamativo, con un diseño minimalista pero impactante. Su caja de acero y correa de cuero negro combinan a la perfección con la esfera con números grandes y estilizados. Ideal para quienes buscan lujo con un toque contemporáneo."),
+(DEFAULT,1, "corumromvlvs.webp", "Corum Romvlvs", "Un reloj de lujo con una estética clásica y sofisticada. Su esfera limpia con números romanos grabados en el bisel y su combinación de acero y oro lo convierten en un accesorio elegante y exclusivo."), 
+(DEFAULT,1, "emporloarmani.webp", "Emporio Armani", "Un reloj de estilo clásico con un aire deportivo gracias a su cronógrafo. Su caja de acero, esfera beige con detalles en negro y su correa de cuero le dan un aspecto sofisticado y masculino. Ideal para quienes buscan elegancia con funcionalidad."),
+(DEFAULT,1, "longinesbellearti.webp", "Longines -Belle Arti", "Inspirado en el Art Deco, este reloj de Longines combina un diseño rectangular con una esfera negra sofisticada. Su brazalete de acero y sus detalles clásicos lo convierten en una excelente opción para quienes buscan distinción."),
+(DEFAULT,1,"longinesdolcevita.webp", "Longines DolceVita", "Un modelo elegante con un diseño rectangular que lo hace destacar. Su caja de acero y su brazalete metálico brindan un look refinado, mientras que su esfera blanca con detalles sencillos refleja sofisticación y lujo. Perfecto para quienes buscan un reloj distinguido y versátil."),
+(DEFAULT,1,"radodiastarcremico.webp", "Rado Diastar Cremico", "Un reloj sofisticado con un diseño minimalista y elegante. Su caja y brazalete en cerámica blanca con detalles dorados le otorgan un look refinado y exclusivo. Ideal para quienes buscan un estilo moderno y lujoso."),
+(DEFAULT,1,"raymondweildama.webp", "Raymond Weil Dama", "Un reloj femenino con un diseño clásico y elegante. Su esfera blanca con números romanos y su correa de cuero negro le dan un toque sofisticado y atemporal. Perfecto para quienes buscan un accesorio refinado para cualquier ocasión."),
+(DEFAULT,1,"tagheuer.webp", "Tag Heuer- Formula 1", "Diseñado para los amantes de la velocidad y la adrenalina, este reloj deportivo cuenta con una caja robusta y un bisel giratorio con marcadores de tiempo. Su combinación de colores le da un aspecto dinámico y audaz."),
+(DEFAULT,1,"tagheuerprofessional.webp", "Tag Heuer Professional 2000", "Un modelo de inspiración náutica con un diseño resistente y funcional. Su caja de acero con detalles dorados y su bisel giratorio lo hacen ideal para quienes buscan un reloj versátil y duradero.");
 
 SELECT * FROM COMENTARIOS;
 INSERT INTO comentarios (id, idPost, idUsuario, comentario)
