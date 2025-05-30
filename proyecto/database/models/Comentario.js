@@ -33,13 +33,14 @@ module.exports=function(sequelize,dataTypes) {
 
     const Comentario = sequelize.define(alias, cols, config);
 
-    // muchos a uno 
+  
     Comentario.associate = function(models) {
+         // muchos a uno 
         Comentario.belongsTo(models.Producto, {
             as: "productos",
             foreignKey: "idPost"
         });
-
+        // muchos a uno 
         Comentario.belongsTo(models.Usuario, {
             as: "usuarios",
             foreignKey: "idUsuario"

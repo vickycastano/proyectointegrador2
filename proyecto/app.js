@@ -17,7 +17,7 @@ app.use(session({secret : "Nuestro mensaje secreto",
   saveUninitialized: true
 }));
 
-
+//guarda en las vistas el usuario que está logueado durante la sesión, para poder mostrar su información mientras navega.
 app.use (function(req, res, next){
     if (req.session.usuarioLogueado != undefined){
       res.locals.user = req.session.usuarioLogueado;
@@ -34,8 +34,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
+// si el usuario eligió "recordarme", se vuelva a iniciar su sesión automáticamente usando la cookie.
 app.use(function (req, res, next) {
   if (req.cookies.usuarioEmail != undefined && req.session.user == undefined) {
     res.locals.user = req.cookies.usuarioEmail
@@ -46,6 +46,7 @@ app.use(function (req, res, next) {
 
 
 
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', indexRouter);

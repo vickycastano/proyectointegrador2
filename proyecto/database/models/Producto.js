@@ -37,13 +37,14 @@ module.exports = function(sequelize, dataTypes) {
   
     const Producto = sequelize.define(alias, cols, config);
 
-    //1 a muchos y muchos a 1 
+    
     Producto.associate = function(models) {
-        Producto.hasMany(models.Comentario, {
+        //uno a muchos 
+         Producto.hasMany(models.Comentario, {
             as: "comentarios",
             foreignKey: "idPost"
         });
-
+        //muchos a uno 
         Producto.belongsTo(models.Usuario,{
             as: "usuarios",
             foreignKey: "usuarioId"

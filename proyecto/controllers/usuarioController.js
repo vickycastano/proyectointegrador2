@@ -76,6 +76,8 @@ const usuarioController = {
           } else {
               let claveCorrecta = bcrypt.compareSync(claveIngresada, usuarioEncontrado.contraseña);
               if (claveCorrecta) {
+
+                //Guarda al usuario que inició sesión para recordarlo mientras navega por la página.
                   req.session.usuarioLogueado = usuarioEncontrado;
   
   
@@ -87,7 +89,7 @@ const usuarioController = {
           } else {
               return res.send("Contraseña incorrecta");
           }
-      }
+          }
       })
       .catch(function(error) {
         console.log(error);

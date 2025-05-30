@@ -3,7 +3,9 @@ const db = require ('../database/models');
 let op = db.Sequelize.Op;
 
 const productoController ={
-    productadd: function(req, res) {
+
+    productadd: 
+    function(req, res) {
 
        if (req.session.usuarioLogueado) {
             return res.render("product-add");
@@ -12,10 +14,11 @@ const productoController ={
         }
 
     },
-    nuevoproducto: function(req,res){
+    nuevoproducto: 
+    function(req,res){
 
       db.Producto.create({
-        usuarioId: req.session.usuarioLogueado.id,
+        usuarioId: req.session.usuarioLogueado.id, // guarda el usuario que esta logeado en el momento de ejecutar un nuevo producto 
         imagenDelProducto: req.body.image,
         nombreDelProducto: req.body.productname,
         descripcion: req.body.descripcion,
@@ -28,7 +31,8 @@ const productoController ={
       })
 
     },
-    detail: function(req, res) {
+    detail: 
+    function(req, res) {
 
       db.Producto.findByPk(req.params.id, {
         include: [
@@ -45,7 +49,8 @@ const productoController ={
           res.send("Error al buscar el producto");
         });
     },
-    comentar: function (req, res){
+    comentar: 
+    function (req, res){
       if (req.session.usuarioLogueado == undefined) {
         return res.redirect('/usuario/login');
       }
