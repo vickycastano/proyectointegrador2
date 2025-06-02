@@ -3,15 +3,13 @@ const bcrypt = require('bcryptjs');
 
 const usuarioController = {
 
-  register: 
-  function(req, res) {
+  register: function(req, res) {
       if (req.session.usuarioLogueado) {
         return res.redirect('/usuario/profile');
       };
       res.render('register');
   },
-  create: 
-  function(req,res){
+  create: function(req,res){
     if (req.session.usuarioLogueado) {
         return res.redirect('/usuario/profile')
     }
@@ -52,16 +50,14 @@ const usuarioController = {
     });
 
   },
-  login: 
-  function(req, res) {
+  login: function(req, res) {
           if (req.session.usuarioLogueado) {
               return res.redirect('/usuario/profile');
           }else{
               return res.render("login");
           }
   }, 
-  procesa:
-  function(req,res){
+  procesa:function(req,res){
           let emailIngresado = req.body.username;
           let claveIngresada = req.body.password;
           let recordame = req.body.remember;
@@ -97,15 +93,13 @@ const usuarioController = {
       });
      
   },
-  logout: 
-  function(req,res){
+  logout: function(req,res){
           req.session.destroy(function() {
               res.clearCookie('usuarioEmail');
               return res.redirect('/');
           });
   },
-  profile: 
-  function(req, res) {
+  profile: function(req, res) {
         let userId;
 
         if (req.params.id) {

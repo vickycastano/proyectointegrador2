@@ -2,8 +2,7 @@ const db = require('../database/models')
 const op = db.Sequelize.Op;
 
 const indexController={
-    index:
-    function(req, res) {
+    index:function(req, res) {
         db.Producto.findAll( {include: [ {association: "usuarios"} ]})
         .then(function(respuesta){
             return res.render('index',{productos:respuesta})
@@ -13,8 +12,7 @@ const indexController={
         })
 
     },
-    searchresults: 
-    function(req, res) {
+    searchresults: function(req, res) {
           const searchTerm = req.query.search;
     
           db.Producto.findAll({
